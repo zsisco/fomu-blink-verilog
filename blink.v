@@ -1,22 +1,10 @@
 // Simple tri-colour LED blink example.
 
 // Correctly map pins for the iCE40UP5K SB_RGBA_DRV hard macro.
-// The variables EVT, PVT and HACKER are set from the Makefile.
-`ifdef EVT
-`define BLUEPWM  RGB0PWM
-`define REDPWM   RGB1PWM
-`define GREENPWM RGB2PWM
-`elsif HACKER
-`define BLUEPWM  RGB0PWM
-`define GREENPWM RGB1PWM
-`define REDPWM   RGB2PWM
-`elsif PVT
+
 `define GREENPWM RGB0PWM
 `define REDPWM   RGB1PWM
 `define BLUEPWM  RGB2PWM
-`else
-`error_board_not_supported
-`endif
 
 module top (
     // 48MHz Clock input
