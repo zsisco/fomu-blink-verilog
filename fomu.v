@@ -36,12 +36,12 @@ module top (
         .GLOBAL_BUFFER_OUTPUT(clk)
     );
 
-    // Use counter logic to divide system clock.  The clock is 48 MHz,
-    // so we divide it down by 2^28.
-    reg [28:0] counter = 0;
-    always @(posedge clk) begin
-        counter <= counter + 1;
-    end
+    // PyRTL module goes here:
+    wire [28:0] counter;
+    toplevel pyrtl_toplevel (
+        .clk (clk),
+        .counter_o (counter)
+    );
 
     // Instantiate iCE40 LED driver hard logic, connecting up
     // counter state and LEDs.
