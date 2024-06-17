@@ -2,7 +2,7 @@
 
 0. Install the YoWASP Toolchain vscode plugin.
 1. Insert FOMU into USB port.
-2. Run `./load-pyrtl.sh` to output PyRTL to Verilog and combine it with `fomu.v`.
-3. In vscode, run command `YoWASP Toolchain: Build...`
-4. ...
-5. FOMU's LED should cycle between different colors. Try modifying the logic for the counter in `counter.py` to see the LED change at different rates.
+2. In vscode, run command `YoWASP Toolchain: Build...` (`cmd`+`shift`+`p`)
+3. ...
+4. FOMU's LED should cycle between different colors.
+5. Try modifying the logic for the counter in `blink.py` to see the LED change at different rates.

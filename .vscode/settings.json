@@ -1,13 +1,17 @@
 {
-    "yowaspToolchain.bundles": [
-        "@yowasp/yosys",
-        "@yowasp/nextpnr-ice40",
-        "@yowasp/openfpgaloader"
-      ],
-    "yowaspToolchain.buildCommands": [
-      ["yosys", "-DPVT", "blink.v", "-p", "synth_ice40", "-o", "blink.json"],
-      ["nextpnr-ice40", "--up5k", "--package", "uwg30", "--pcf", "fomu-pvt.pcf", "--json", "blink.json", "--asc", "blink.asc"],
-      ["icepack", "blink.asc", "blink.bit"],
-      ["openFPGALoader", "-b", "fomu", "blink.bit", "--verify"]
-    ]
-  }
+  "yowaspToolchain.pythonRequirements": [
+    "pyrtl"
+  ],
+  "yowaspToolchain.bundles": [
+    "@yowasp/yosys",
+    "@yowasp/nextpnr-ice40",
+    "@yowasp/openfpgaloader"
+  ],
+  "yowaspToolchain.buildCommands": [
+    ["python", "blink.py"],
+    ["yosys", "-DPVT", "blink.v", "-p", "synth_ice40", "-o", "blink.json"],
+    ["nextpnr-ice40", "--up5k", "--package", "uwg30", "--pcf", "fomu-pvt.pcf", "--json", "blink.json", "--asc", "blink.asc"],
+    ["icepack", "blink.asc", "blink.bit"],
+    ["openFPGALoader", "-b", "fomu", "blink.bit", "--verify"]
+  ]
+}
