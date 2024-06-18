@@ -16,10 +16,7 @@ counter_o <<= counter
 ## Export this PyRTL code to Verilog, then combine it with the Verilog
 ## harness code in `fomu.v`, creating new file `blink.v`.
 ##=========================================================================##
-
-blink = open("blink.v", 'w')
-harness = open("fomu.v", 'r')
- 
-blink.write(harness.read())
-
-pyrtl.importexport.output_to_verilog(dest_file=blink, add_reset=False)
+with open('blink.v', 'w') as blink:
+    with open("fomu.v", 'r') as harness:
+        blink.write(harness.read())
+    pyrtl.importexport.output_to_verilog(dest_file=blink, add_reset=False)
