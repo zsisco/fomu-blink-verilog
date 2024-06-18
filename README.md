@@ -6,3 +6,4 @@
 3. ...
 4. FOMU's LED should cycle between different colors.
 5. Try modifying the logic for the counter in `blink.py` to see the LED change at different rates.
+  (If you make any changes, unplug the FOMU and plug it back in before running `YoWASP Toolchain: Build` again.)
