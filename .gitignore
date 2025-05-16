@@ -1,3 +1,6 @@
+.python-version
+uv.lock
+
 blink.asc
 blink.bit
 blink.json
